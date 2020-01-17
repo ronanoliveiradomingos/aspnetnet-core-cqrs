@@ -1,0 +1,3 @@
+D:\projetos\aspnet-core-api-cqrs\tests\obj\Debug\netcoreapp3.0\Solution.UnitTests.csprojAssemblyReference.cache
+D:\projetos\aspnet-core-api-cqrs\tests\obj\Debug\netcoreapp3.0\Solution.UnitTests.AssemblyInfoInputs.cache
+D:\projetos\aspnet-core-api-cqrs\tests\obj\Debug\netcoreapp3.0\Solution.UnitTests.AssemblyInfo.cs
