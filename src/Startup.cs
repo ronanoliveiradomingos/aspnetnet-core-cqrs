@@ -16,6 +16,7 @@ using Solution.PipelineBehaviors;
 using Solution.Repositories;
 using FluentValidation;
 using MediatR;
+using Microsoft.OpenApi.Models;
 
 namespace Solution
 {
@@ -33,6 +34,14 @@ namespace Solution
         {
             services.AddControllers();
 
+            // Add Swagger
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new OpenApiInfo{ Version = "v1", Title = "App", Description = "My app" });
+                options.EnableAnnotations();
+                options.DescribeAllParametersInCamelCase();
+            });
+
             services.AddSingleton<ICustomersRepository, CustomersRepository>();
             services.AddSingleton<IOrdersRepository, OrdersRepository>();
             services.AddSingleton<IMapper, Mapper>();
@@ -48,6 +57,13 @@ namespace Solution
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            // Use swagger
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Test");
+            });
 
             app.UseHttpsRedirection();
 

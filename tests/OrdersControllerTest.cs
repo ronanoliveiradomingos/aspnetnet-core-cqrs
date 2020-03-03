@@ -13,7 +13,7 @@ namespace Solution.UnitTests
         public OrdersControllerUnitTest()
         {
             var _mediator = new Mock<IMediator>();
-            _controller = new OrdersController(_mediator);
+            _controller = new OrdersController(_mediator.Object);
         }
 
         [Fact]

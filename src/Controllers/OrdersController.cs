@@ -9,6 +9,7 @@ using Solution.Commands;
 using Solution.Mapping;
 using Solution.Queries;
 using Solution.Repositories;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace Solution.Controllers
 {
@@ -42,6 +43,8 @@ namespace Solution.Controllers
         }
 
         [HttpGet]
+        // [SwaggerOperation(Summary = "summary....", Description = "description....")]
+        // [SwaggerResponse(HttpStatusCodes.Created, "Returns the id of the created object", typeof(CreatedResponse))]
         public async Task<IActionResult> GetAllOrders()
         {
             var query = new GetAllOrdersQuery();
